@@ -1,7 +1,6 @@
 # Imports
 from pathlib import Path
 from shutil import move
-import uuid
 from PIL import Image
 from random import randint, choice
 from win32com.shell import shell, shellcon
