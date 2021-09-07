@@ -1,6 +1,6 @@
 # wallpaper-switcher
 
-![](https://i.imgur.com/7dpnqNl.png)
+![](https://i.imgur.com/XxFeOvd.png)
 
 A python script to better transition wallpapers for desktop background slideshows
 
