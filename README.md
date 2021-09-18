@@ -21,6 +21,7 @@ The native Windows wallpaper slideshow does not deal well with mixing and matchi
 - Run the `setup.py` script in the folder that you wish to store the folder directories for the wallpapers on. The script can then be deleted.
 - Add enough wallpapers to the respective folders (or into the "To-Sort" folder) such that the script will have enough wallpapers to tile your displays. **Not having this will likely make the script hang**.
 - Move the `main.py` script into the folder with the created folders and use a job scheduler (e.g. Windows Task Scheduler) to have the script run and change wallpapers at your desired interval.
+- In your wallpaper settings (right-click the desktop and click on Personalize), ensure that the wallpaper fit is set to "Tile" 
 
 ## Limitations
 

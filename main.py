@@ -130,12 +130,16 @@ if __name__ == "__main__":
     # Get number of monitors (assuming all monitors are 1080p - TODO make this compatible with other monitor sizes)
     num_monitors = int(round(desk_width / MONITOR_WIDTH))
 
-    # Randomly choose combination of wallpapers to fill monitors
+    # Generate weightings for each wallpaper size
+    wallpaper_weights = []
+    for size in size_folders:
+        wallpaper_weights += [size] * len(os.listdir(size_folders[size]))
+    print(wallpaper_weights)
 
     # Randomly choose wallpaper sizes
     wallpaper_sizes = []
     while(sum(wallpaper_sizes) < num_monitors):
-        wallpaper_size = randint(1, 3)
+        wallpaper_size = choice(wallpaper_weights)
         # Check if wallpaper fits into monitors and wallpaper of given size exists
         if ((sum(wallpaper_sizes) + wallpaper_size <= num_monitors) and len(os.listdir(f'./{size_folders[wallpaper_size]}')) != 0):
             wallpaper_sizes.append(wallpaper_size)
