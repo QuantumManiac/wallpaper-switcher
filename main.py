@@ -4,7 +4,6 @@ from shutil import move
 from PIL import Image
 from random import randint, choice
 from win32com.shell import shell, shellcon
-from uuid import uuid4
 import os
 import ctypes
 import win32api
@@ -109,9 +108,14 @@ if __name__ == "__main__":
                     dest_folder = OTHER_FOLDER
 
                 # Create unique filename
-                filename = str(uuid4()) + path.suffix
+                filename = path.name
                 # Create destination path
                 dest = Path(f'./{dest_folder}/{filename}')
+
+                # Prevent overwriting with same name
+                if (os.path.exists(dest)):
+                    dest = Path(f'./{OTHER_FOLDER}/{path.stem}_{path.suffix}')
+
                 # Move image to destination folder
                 move(path, dest)
 
@@ -134,7 +138,6 @@ if __name__ == "__main__":
     wallpaper_weights = []
     for size in size_folders:
         wallpaper_weights += [size] * len(os.listdir(size_folders[size]))
-    print(wallpaper_weights)
 
     # Randomly choose wallpaper sizes
     wallpaper_sizes = []
