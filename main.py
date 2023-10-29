@@ -201,6 +201,9 @@ if __name__ == "__main__":
         for i, img in enumerate(wallpaper_images):
             final_wallpaper.paste(img, (next_width * MONITOR_WIDTH, 0))
             next_width += wallpaper_sizes[i]
+    else:
+        # If only one wallpaper, set final wallpaper to that wallpaper
+        final_wallpaper = wallpaper_images[0]
 
     final_wallpaper.save('current_wallpaper.png')
 
