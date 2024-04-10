@@ -13,7 +13,7 @@ import win32gui
 
 
 # Constants
-VALID_FILETYPES = ['.gif', '.jpeg', '.jpg', '.png']
+VALID_FILETYPES = ['.gif', '.jpeg', '.jpg', '.png', '.webp']
 
 # Monitor height and width - assuming all monitors have the same one
 MONITOR_HEIGHT = 1080
